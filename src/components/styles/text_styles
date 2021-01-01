@@ -1,0 +1,78 @@
+/*
+  Author: Juan Maturino
+  Date:   12/01/2020
+
+  Title:  Text_Styles
+  Description: File that describes basic text styles to use and build off of
+               throughout the app
+ */
+
+
+import styled from "styled-components"
+
+// HEADINGS
+export const H1 = styled.h1`
+  font-weight: bold;
+  font-size: 80px;
+`
+
+export const H2 = styled.h2`
+  font-weight: bold;
+  font-size: 60px;
+`
+
+export const H3 = styled.h3`
+  font-weight: bold;
+  font-size: 30px;
+`
+
+export const H4 = styled.h4`
+  font-weight: bold;
+  font-size: 24px;
+`
+
+// BODY
+
+export const BodyIntro = styled.p`
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 140%;
+`
+
+export const BodyMain = styled.p`
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 140%;
+`
+
+export const Caption = styled.p`
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+`
+
+export const CaptionUpper = styled.p`
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 18px;
+  text-transform: uppercase;
+`
+
+export const MediumText = styled.p`
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 130%;
+`
+
+export const SmallText = styled.p`
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 130%;
+`
+
+export const SmallTextUpper = styled.p`
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 130%;
+  text-transform: uppercase;
+`

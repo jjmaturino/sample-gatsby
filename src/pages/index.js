@@ -1,22 +1,37 @@
-import React from "react"
-import { Link } from "gatsby"
+/*
+  Author: Juan Maturino
+  Date: 12/05/2020
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+  Title: Dashboard
+  Description: This file holds the structure of the main dashboard of Edua
+ */
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site running on App Platform!</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+import React, { useState } from "react"
+import { Router, Redirect } from "@reach/router"
+
+import Layout from "../components/layouts/layout"
+import SEO from "../components/layouts/seo"
+
+import Dashboard from "../components/sections/dashboard"
+import PrivateRoute from "../utils/private_routes"
+import LoginPage from "../components/sections/login"
+import Login from "../utils/Login"
+import SettingsPage from "../components/sections/settings"
+import AccountPage from "../components/sections/account"
+import RegisterPage from "../components/sections/register"
+
+export default function IndexPage() {
+  return (
+    <div>
+      <Router>
+        <PrivateRoute path="/dashboard" component={Dashboard} />
+        <PrivateRoute path="/settings" component={SettingsPage} />
+        <PrivateRoute path="/account" component={AccountPage} />
+        <Login path="/loginTest" />
+
+        <LoginPage path="/login" />
+        <RegisterPage path="/register" />
+      </Router>
     </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
-
-export default IndexPage
+  )
+}
